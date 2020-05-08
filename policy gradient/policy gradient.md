@@ -1,6 +1,6 @@
 # Policy Gradient Methods for Reinforcement Learning
 
-## MARKOV DECISTION PROCESS
+## MARKOV DECISION PROCESS
 
 强化学习是建立在MDP的设定下的，每个时间点根据当前的状态做决策，然后系统根据特定的决策会有不同的transition matrix (assumed to be stationary)，MDP也叫controlled Markov chain，也是最优控制和stochastic control，以及动态规划里面最基础的模型，这些领域之间都是高度相关的，尤其是动态规划与强化学习。我们这里定义一条轨迹$\tau=(s_1,a_1,s_2,...)$ 是一串状态和动作，那么这个轨迹的概率是：
 
