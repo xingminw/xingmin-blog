@@ -23,7 +23,7 @@ X = X1 + X2
 # PCA (SVD)
 U, s, V = np.linalg.svd(X.T)
 rank = 2
-plt.figure()
+plt.figure(figsize=[12, 8])
 plt.subplot(221)
 for r in range(rank):
     plt.plot(U[:, r], "-")
@@ -42,7 +42,7 @@ plt.show()
 dmd = DMD(svd_rank=2)
 dmd.fit(X.T)
 modes = dmd.modes.T.real
-plt.figure()
+plt.figure(figsize=[12, 5])
 
 plt.subplot(121)
 for mode in dmd.modes.T:
@@ -57,7 +57,7 @@ for dynamic in dmd.dynamics:
 print(dmd.frequency)
 plt.show()
 
-plt.figure()
+plt.figure(figsize=[12, 8])
 plt.subplot(221)
 plt.title("Input modes")
 plt.plot(X1[0], "-")

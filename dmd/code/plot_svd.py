@@ -3,8 +3,8 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 def plot_svd(U, s, V):
-    rank = 5
-    plt.figure()
+    rank = 10
+    plt.figure(figsize=[12, 8])
     plt.subplot(221)
     for r in range(rank):
         plt.plot(U[:, r], "-")
@@ -17,7 +17,7 @@ def plot_svd(U, s, V):
     plt.plot(s, "b.-")
     plt.title("Singular values")
     plt.subplot(224, projection="3d")
-    plt.plot(V[1, :], V[2, :], V[3, :], lw=0.5)
+    plt.plot(V[0, :], V[1, :], V[2, :], lw=0.5)
     plt.title("Trace in new coordinates")
     plt.show()
 

@@ -27,15 +27,19 @@ for i in range(num_steps):
     ys[i + 1] = ys[i] + (y_dot * dt)
     zs[i + 1] = zs[i] + (z_dot * dt)
 
+plt.figure()
+plt.plot(xs)
+plt.show()
+
 # create Hankel matrix
-hankel_matrix = hankel(xs, 10)
+hankel_matrix = hankel(xs, 15)
 
 # singular value decomposition for the Hankel matrix
 U, s, V = np.linalg.svd(hankel_matrix)
 plot_svd(U, s, V)
 
 # Plot
-fig = plt.figure()
+fig = plt.figure(figsize=[12, 8])
 ax = fig.gca(projection='3d')
 
 ax.plot(xs, ys, zs, lw=0.5)
