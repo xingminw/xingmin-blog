@@ -92,12 +92,19 @@ Then if we look at the decomposition results, DMD can somehow be regarded as a c
 
 ## Examples of DMD
 
-Here is an example for the dynamic model decomposition and comparison with PCA and ICA.
+Here is an example for the dynamic model decomposition and comparison with PCA (SVD).
 
+![image](figures/input_model.png)
 
-![image](figures/low_rank_embedding.png)
+![image](figures/model.png)
+
+![image](figures/dmd_results.png)
+
+![image](figures/svd.png)
 
 ## Koopman Theory
+
+
 
 ## Time-Delay Embeddings
 
