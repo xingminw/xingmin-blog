@@ -35,7 +35,7 @@ where $u$ can be the controlled variable, $\beta$ is the parameters. The functio
 
 Therefore, sometimes a data-driven method might be preferable to the traditional method by establishing models, solving, and analyzing the models. dynamic mode decomposition (DMD) is such a method that does not require any prior domain knowledge but only the data to analyze the dynamic systems using a linear approximation.
 
-Before we go to the details of the DMD and Koopman analysis which could be regarded as an extension, here we recap the analysis for a linear system.
+Before we go to the details of the DMD and Koopman analysis, here we recap the analysis for a linear system.
 
 The discrete linear system can be written as:
 
@@ -168,7 +168,7 @@ For this system that cannot find the finite Koopman operator easily, the method 
 
 $$\frac{d}{dt}\phi(x)=x^{-2}\phi(x)\dot{x}=\phi(x)$$
 
-which means that on this observable $\phi(x)$, the system will become linear system. This seems very magic to me...
+which means that on this observable $\phi(x)$, the system will become a linear system. This seems very magic to me...
 
 The question is that how to find the bases for such eigenfunctions. Acually, the eigenfunctions satisfy a closed analytical form as a solution of a PDE. The Koopman eigenfunctions expand a invariant subspaces and the PDE is written as:
 
@@ -188,7 +188,7 @@ $$\lambda\phi(x)=\nabla \phi(x)\cdot f(x)$$
 
 We can choose any bases of the functions, for example Taylor series, Fourier series and conduct a sparse linear regression to choose a sparse set of these functions. This idea was come up with professor Steve Brunton and his collaborators and they also used this similar idea to identify the dynamic of the nonlinear systems in their SINDy (sparse identification of nonlinear dynamics) paper.
 
-Finding the Koopman eigenfunctions is very difficult especially for the real-world complex systems. But once we get a good Koopman operator and Koopman eigenfunctions, we will benefit a lot since we will have a linear approximation for the original complex systems.
+Finding the Koopman eigenfunctions is very difficult especially for real-world complex systems. But once we get a good Koopman operator and Koopman eigenfunctions, we will benefit a lot since we will have a linear approximation for the original complex systems.
 
 ## Time-Delay Embedding for Nonlinear Systems
 
@@ -200,7 +200,7 @@ This figure shows a trace of the Lorentz attractor, which is a well-known chaoti
 
 ![Lorentz attractor](https://imgkr.cn-bj.ufileos.com/58342a5c-38c7-4421-8304-87f1a4d4a1ef.png)
 
-Here we will use Lorentz attractor as an example to show how the traditional method can find the hidden structure of the chaotic system using the time-delay embedding. Assume that we can only observe one of the dimension of the Lorentz attractor:
+Here we will use Lorentz attractor as an example to show how the traditional method can find the hidden structure of the chaotic system using the time-delay embedding. Assume that we can only observe one of the dimensions of the Lorentz attractor:
 
 ![x of Lorentz attractor](https://imgkr.cn-bj.ufileos.com/99062e65-6715-4637-bd87-2ec6e684ab3e.png)
 
