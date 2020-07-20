@@ -40,6 +40,7 @@ plt.title("Singular values")
 plt.show()
 
 dmd = DMD(svd_rank=2)
+print(np.shape(X))
 dmd.fit(X.T)
 modes = dmd.modes.T.real
 plt.figure(figsize=[12, 5])
