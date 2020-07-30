@@ -21,7 +21,7 @@ domain $\Omega$. We say that a subset $\Lambda \in \Omega$ is *shattered* by $\m
 
 这个定义还是有点抽象的，我们这里举一个简单的例子，我们把空间$\Omega$定义为$\mathbb{R}^2$, $\mathcal{F}$是所有的半平面，那么对于下图第一个例子，我们可以用$\mathcal{F}$ shatter 这三个点出现的所有的 $0$ 和 $1$ 组成的不同的patterns，所以半平面$\mathcal{F}$的VC dimension是大于等于$3$的，进一步可以验证，对于四个点的情形，我们无法任意的四个点使得半平面能够完全将其shatter的，所以对于定义在$\mathbb{R}^2$上的半平面而言，VC dimension为$3$。
 
-![iVC dimension for the halfspace in $\mathbb{R}^2$mage](figs/halfplane.png)
+![VC dimension for the halfspace in $\mathbb{R}^2$mage](https://imgkr.cn-bj.ufileos.com/211ad269-7cd5-4f7a-afbf-aad79b99632b.png)
 
 ## Statistical Learning Theory
 
@@ -29,7 +29,7 @@ domain $\Omega$. We say that a subset $\Lambda \in \Omega$ is *shattered* by $\m
 
 下面的图表给出了statistical learning或者说machine learning的基本框架，我们假定$\mathcal{X}$与$\mathcal{Y}$之间有一定未知的映射关系$f$，我们有一些给定的数据集$(x_i,y_i), i\in [N]$， 目标是通过给定的数据集去推测映射关系$f$进而可以利用推测的映射关系去根据$x$推测$y$或者反之。其中Hypothesis set就是备选的函数集合，比如神经网络或者其他函数，learning algorithm对应特定的优化算法，比如stochastic gradient descent/ascent，最终利用特定的优化算法去找到最接近于映射关系$f$的函数$g$。这里我们进一步把这个general的learning的问题限制在binary classification问题中，也即$\mathcal{Y}=\{0,1\}$，这样问题的设定就和VC dimension高度相关：hypothesis set就对应特定的布尔函数集合$\mathcal{F}$。
 
-![General learning diagram](figs/learning.png)
+![Overfitting illustration](https://imgkr.cn-bj.ufileos.com/65d1e497-08cc-4fde-b0ac-1e3bcae57a81.png)
 
 对于上述的learning problem，定义risk：
 
@@ -37,7 +37,7 @@ $$R(f):=\mathbb{E}(g(X)-f(X))^2=\mathbb{P}(f(X)\neq g(X))$$
 
 可以简单理解为估计的映射关系$f$和目标映射关系$g$之间的距离，用均方差来表征。后面我们主要关注的问题就是对于这样的一个learning problem，多少数据可以使得两个映射关系足够接近，直观上来看，问题越复杂我们需要的数据也越多。对于hypothesis set的选择，也是一个在函数表达能力以及复杂程度之间的trade-off，如果函数的表达能力过弱，那么无法得到理想的结果，如果函数集过于复杂，则容易出现过拟合的情况。下图给出了几种不同的情况下的例子：
 
-![Overfitting illustration](figs/overfitting.png)
+![General learning diagram](https://imgkr.cn-bj.ufileos.com/33e4d32b-27ff-4058-a689-8ae0ade0016e.png)
 
 对于一个learning problem，理想的情况是我们在hypothesis set中找到最接近于目标映射的那个函数，也即：
 
@@ -117,4 +117,4 @@ $$R(f_n^*)\le R_n(f_n^*)+\epsilon\le R_n(f^*)+\epsilon\le R(f^*)+2\epsilon$$
 
 之后我们直接应用之前的定理就可以证明所需的结论了。这一个Section只给了证明的非常粗略的思路，其中有很多细节都没有展开，参考文献里写的非常清楚，其中Dudley's inequality的证明用到了非常重要的chaining的方法，这里也省去了VC dimension和covering number之间关系的详细介绍，简单列一个框架仅供参考。以及每次写完都特别懒得做proofreading，错误与疏漏在所难免。
 
-手机竖屏看这些实在是不太友好，我一直有把一些推送push在github的一个repo里面，包括转成的pdf，可能看起来有好一些：
+手机竖屏看这些实在是不太友好，我一直有把一些推送push在github的一个repo里面，包括转成的pdf，可能看起来有好一些：[pdfVersion](https://github.com/xingminw/xingmin-blog/blob/master/vc-dimension/vc-dimension.pdf)。
